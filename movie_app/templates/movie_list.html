@@ -1,0 +1,19 @@
+{% load static %}
+<ul class="movie_list">
+    {% for movie in movies %}
+         <li>
+             <a>
+                 <input type="hidden" class="m_id" value="{{ movie.m_id }}">
+                 <div class="movie_poster">
+                     <img src="{% static movie.m_poster %}"/>
+                 </div>
+                 <div class="movie_name">
+                     {{ movie.m_name }}
+                 </div>
+             </a>
+         </li>
+    {% endfor %}
+    <div class="clear">
+
+    </div>
+</ul>

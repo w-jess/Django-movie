@@ -1,0 +1,108 @@
+.info {
+	width: 80%;
+	height: 100%;
+	position: fixed;
+	background: #fff;
+	top: 0;
+	left: 101%;
+	z-index: 9;
+	box-shadow: #666 -4px 0px 10px;
+	border-left: 5px solid red;
+}
+
+.info_close {
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: 300px;
+	border-width: 20px;
+	border-style: solid;
+	border-color: white white white red;
+}
+
+.movie_info {
+	width: 80%;
+	height: 80%;
+	position: relative;
+	top: 10%;
+	left: 10%;
+}
+
+.movie_info .movie_img {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.movie_info .movie_text {
+	width: 60%;
+	height: 100%;
+	float: left;
+}
+
+.movie_img img {
+	display: block;
+	width: 90%;
+	height: 70%;
+	margin: 20px auto;
+}
+
+.movie_img .movie_player {
+	width: 90%;
+	height: 30%;
+	line-height: 40px;
+	font-size: 24px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.movie_player a {
+	color: orange;
+	letter-spacing: 10px;
+	font-weight: bolder;
+	font-family: "黑体";
+	text-shadow: #666 1px 1px 3px;
+}
+
+.movie_text p{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+}
+
+.movie_text .info_label {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.m_name {
+	height: 50px !important;
+	font-size: 30px;
+	color: black;
+	text-shadow: #999 2px 2px 3px;
+	font-weight: bolder;
+	letter-spacing: 3px;
+	line-height: 50px !important;
+}
+
+.m_scenario {
+	width: 100%;
+	height: 300px;
+	position: relative;
+	top: 20px;
+	
+}
+
+.scenario_content {
+	width: auto !important;
+	height: auto !important;
+	position: relative;
+	top: 10px !important;
+	font-size: 18px !important;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 6;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	text-indent: 36px;
+}

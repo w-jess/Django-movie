@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        {% load static %}
+		<meta charset="UTF-8">
+		<title>电影放映室</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/play.css' %}"/>
+		<script src="{% static 'js/jquery-3.0.0.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/util.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static 'js/bs.js' %}" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+        <input type="hidden" id="m_id" name="m_id" value="{{ movie.m_id }}"/>
+		<div class="play_block">
+			<div class="bullteScreen">
+
+			</div>
+			<iframe id="iFrame" src="http://api.baiyug.vip/index.php?url={{ movie.m_link }}"></iframe>
+		</div>
+		<div class="bulletscreen_controller">
+			<div class="bs_switch">
+				<span>弹幕</span>
+				<div class="switch_bg">
+					<div class="switch">
+						
+					</div>
+				</div>
+			</div>
+			<div class="bs_input">
+				<input type="text" id="bs_content" />
+				<span id="send_btn" class="send disable">发送</span>
+			</div>
+		</div>
+	</body>
+</html>

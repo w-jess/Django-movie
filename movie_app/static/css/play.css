@@ -1,0 +1,122 @@
+body {
+	background: black;
+}
+
+.play_block {
+	width: 90%;
+	height: 90%;
+	position: fixed;
+	left: 5%;
+	background: black;
+	overflow: hidden;
+}
+
+.play_block iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+.bulletscreen_controller {
+	width: 90%;
+	height: 8%;
+	background: black;
+	position: fixed;
+	left: 5%;
+	top: 90%;
+}
+
+.bs_switch {
+	width: 100px;
+	height: 40px;
+	position: relative;
+	left: 40px;
+	line-height: 40px;
+	color: palevioletred;
+	font-weight: bold;
+	float: left;
+}
+
+.bs_switch span{
+	display: block;
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.bs_switch .switch_bg {
+	width: 50px;
+	height: 30px;
+	float: left;
+	position: relative;
+	top: 5px;
+	background: #666;
+	border-radius: 15px;
+}
+
+.bs_switch .switch_bg .switch {
+	position: absolute;
+	left: 0px;
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	box-shadow: #333 0 0 3px;
+}
+
+.bs_input {
+	width: 500px;
+	height: 35px;
+	background: red;
+	position: relative;
+	float: left;
+	left: 200px;
+}
+
+.bs_input input {
+	width: 410px;
+	height: 35px;
+	padding-left: 10px;
+	outline: none;
+	border: none;
+	float: left;
+}
+
+.bs_input #send_btn {
+	display: block;
+	width: 80px;
+	height: 35px;
+	text-align: center;
+	line-height: 35px;
+	font-size: 18px;
+	color: #fff;
+	float: left;
+}
+
+.send.disable {
+	background: #aaa;
+	cursor: not-allowed;
+}
+
+.send.enable {
+	background: palevioletred;
+	cursor: pointer;
+}
+
+.bullteScreen {
+	display: none;
+	position: absolute;
+	width: 200%;
+	height: 100%;
+}
+
+.bullteScreen .bs {
+	width: 300px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 20px;
+	color: yellow;
+	position: absolute;
+	left: 50%;
+}

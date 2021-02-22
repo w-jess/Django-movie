@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        {% load static %}
+		<meta charset="utf-8" />
+		<title>vison电影网站主页</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/info.css' %}"/>
+		<script src="{% static  'js/jquery-3.0.0.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static  'js/jquery.cookie.js' %}" type="text/javascript" charset="utf-8"></script>
+		<script src="{% static  'js/login.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static  'js/home.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static  'js/banner.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static  'js/info.js' %}" type="text/javascript" charset="utf-8"></script>
+</head>
+	<body>
+        <div class="test">
+			<div class="regest">
+				<span class="regest_close">&times;</span>
+				<p class="rgt">用户注册</p>
+			    <p>
+			     	<span>用户名</span>
+			     	<input type="text" name="username" id="username0" maxlength="15" placeholder="请输入用户名" />
+			    </p>
+			    <p>
+			     	<span>密码</span>
+			     	<input type="password" name="password" id="password0"  placeholder="请输入密码" />
+			    </p>
+			    <p>
+			     	<span>确认密码</span>
+			     	<input type="password" name="password" id="password1" placeholder="请再次输入密码" />
+		        </p>
+		        <p>
+		        	<span>email</span>
+		        	<input type="email" name="email" id="email" maxlength="25" placeholder="请输入邮箱账号" />
+		        </p>
+		        <p>
+		        	<span>tel</span>
+		        	<input type="tel" name="tel" id="tel" maxlength="11" placeholder="请输入电话号码" />
+		        </p>
+		        <p>
+			     	 <button id="regest_btn">注册</button>
+			    </p>
+			</div>
+		</div>
+		<div class="mask">
+			<div class="login">
+				<span class="login_close">&times;</span>
+			     <p>用户登录</p>
+			     <p>
+			     	<input type="text" name="username" id="username" value="" placeholder="请输入用户名" />
+			     </p>
+			     <p>
+			     	<input type="password" name="password" id="password" value="" placeholder="请输入密码" />
+			     </p>
+			     <p>
+			     	 <button id="login_btn">登录</button>
+			     </p>
+			</div>
+		</div>
+        <div class="info">
+			<div class="info_close"></div>
+			<div class="movie_info">
+
+			</div>
+		</div>
+		<div class="header">
+			 <div class="top">
+                 {% if username == "" %}
+			 	     <span class="to_login">登录</span>
+                     <span class="go_login">注册</span>
+                 {% else %}
+                     <span class="welcome">欢迎，{{ username }}</span>
+                     <a href="/movie/logout" class="logout">退出登录</a>
+                 {% endif %}
+			 </div>
+			 <div class="logo_search">
+			 	  <div class="logo">
+			 	  	 vision
+			 	  </div>
+			 	  <div class="search">
+			 	  	    <div class="search_body">
+			 	  	    	<input type="text" name="keywords" id="keywords" value="" placeholder="请输入查询关键字"/>
+			 	  	    	<input type="button" class="search_bdn" value="搜索" />
+			 	  	    </div>
+			 	  </div>
+			 </div>
+			 <div class="banner">
+			 	  <div class="banner_display">
+			 	  	  <ul class="banner_inner">
+			 	  	  	 <li><img src="{% static 'img/banner1.jpg' %}"/></li>
+			 	  	  	 <li><img src="{% static 'img/banner2.jpg' %}"/></li>
+			 	  	  	 <li><img src="{% static 'img/banner3.jpg' %}"/></li>
+			 	  	  	 <li><img src="{% static 'img/疯狂原始人2.png' %}"/></li>
+			 	  	  </ul>
+			 	  	  <ul class="banner_pager">
+			 	  	  	<li class="on"></li>
+			 	  	  	<li></li>
+			 	  	  	<li></li>
+			 	  	  	<li></li>
+			 	  	  </ul>
+			 	  </div>
+			 </div>
+			 <div class="nav">
+			 	<ul>
+			 		<li><a href="#">喜剧</a></li>
+			 		<li><a href="#">冒险</a></li>
+			 		<li><a href="#">科幻</a></li>
+			 		<li><a href="#">巨制</a></li>
+			 		<li><a href="#">爱情</a></li>
+			 		<li><a href="#">动漫</a></li>
+			 		<li><a href="#">悬疑</a></li>
+			 		<li><a href="#">爱国</a></li>
+			 	</ul>
+			 </div>
+		</div>
+		<div class="content">
+			<ul class="movie_list">
+                {% for movie in movies %}
+                    <li>
+                        <a href="#">
+                            <input type="hidden" class="m_id" value="{{ movie.m_id }}"/>
+                            <div class="movie_poster">
+							    <img src="{% static movie.m_poster %}"/>
+						    </div>
+						    <div class="movie_name">
+							    {{ movie.m_name }}
+						    </div>
+					    </a>
+				    </li>
+                {% endfor %}
+				<div class="clear">
+
+                </div>
+			</ul>
+		</div>
+		<div class="footer">
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<div class="movie_img">
+    <img src="{% static movie.m_poster %}"/>
+    <p class="movie_player">
+        {% if username == "" %}
+             <a class="show_login">登录观看</a>
+        {% else %}
+             <a href="/movie/play?m_id={{ movie.m_id }}">在线观看</a>
+        {% endif %}
+    </p>
+</div>
+<div class="movie_text">
+    <p class="m_name">
+        {{ movie.m_name }}
+    </p>
+    <p class="m_directors">
+        <span class="info_label">导演:</span>
+        {{ movie.m_directors }}
+    </p>
+    <p class="m_actors">
+        <span class="info_label">主演:</span>
+        {{ movie.m_actors }}
+    </p>
+    <p class="m_nation">
+        <span class="info_label">国别:</span>
+        {{ movie.m_nation }}
+    </p>
+    <p class="m_duration">
+        <span class="info_label">片长:</span>
+        {{ movie.m_duration }}分钟
+    </p>
+    <div class="m_scenario">
+        <span class="info_label">剧情简介</span>
+        <p class="scenario_content">
+          {{ movie.m_scenario }}
+        </p>
+    </div>
+</div>
